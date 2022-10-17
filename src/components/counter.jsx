@@ -50,7 +50,7 @@ class Counter extends Component {
           </button>
 
           <button
-            disabled={this.props.counter.value <= 0 && true}
+            disabled={this.props.value <= 0 && true}
             onClick={() => this.props.onDecrement(this.props.counter)}
             className="btn btn-secondary btn-sm m-2"
           >
@@ -62,9 +62,6 @@ class Counter extends Component {
           >
             X
           </button>
-          {/* <ul>
-                {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-            </ul> */}
         </div>
       </div>
     );
@@ -72,12 +69,12 @@ class Counter extends Component {
 
   getBadgeClasses() {
     let classes = "badge m-2 bg-";
-    classes += this.props.counter.value === 0 ? "warning" : "primary";
+    classes += this.props.value === 0 ? "warning" : "primary";
     return classes;
   }
 
   formatCounter() {
-    const { value } = this.props.counter;
+    const { value } = this.props;
     return value === 0 ? "Zero" : value;
   }
 }
